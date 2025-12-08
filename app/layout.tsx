@@ -12,11 +12,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+  
 export const metadata: Metadata = {
-  title: "Annapoorna Portfolio",
-  description: "Portfolio of Annapoorna A K",
+  title: "Annapoorna A K ",
+  description: "Portfolio of M.Tech AI Student - Annapoorna A K",
 };
+
 
 export default function RootLayout({
   children,

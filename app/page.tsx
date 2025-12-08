@@ -59,7 +59,8 @@ export default function Home() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* Project 1 */}
-          <div className="p-6 shadow-md rounded-xl border bg-white text-left">
+          <div className="p-6 shadow-md rounded-xl border bg-white text-left transition-transform duration-300 hover:scale-105">
+
             <h3 className="text-xl font-bold mb-2">LightsUp – Mental Health Platform</h3>
             <p className="text-sm mb-4">
               Full-stack wellness platform with mood tracking, personalized goals, affirmations & recommendations.
@@ -132,6 +133,18 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/annapoorna-a-k/" className="underline" target="_blank">LinkedIn</a>
         </div>
       </section>
+      {/* Footer */}
+      <footer className="w-full text-center py-6 bg-gray-900 text-white mt-10">
+        <p className="text-sm mb-2">© {new Date().getFullYear()} Annapoorna A K</p>
+
+        <a
+          href="/files/Resume.pdf"
+          download
+          className="text-blue-300 underline hover:text-blue-500"
+        >
+          Download Resume
+        </a>
+      </footer>
 
     </main>
   );
