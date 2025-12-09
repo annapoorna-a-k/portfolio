@@ -10,10 +10,9 @@ export default function About() {
         <h2 className={styles.sectionTitle}>Crafting Intelligence</h2>
         <div className={styles.decorativeLine}></div>
         <p className={styles.sectionDescription}>
-          I’m a passionate M.Tech AI student focused on solving real-world
-          challenges using Data Analytics, Deep Learning, and intelligent
-          automation. I believe innovation should always create a positive
-          impact in people's lives.
+          I’m an M.Tech AI student who loves turning data into something meaningful — especially when it can help people.
+When I’m not experimenting with models, you’ll probably find me vibing to music or sketching ideas.
+Hit me up if you want to talk AI… or just share a cool playlist! 😄🎶
         </p>
       </div>
     </section>
