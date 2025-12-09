@@ -1,0 +1,12 @@
+:root {
+  --text-muted: #8b7481;
+}
+
+.footer {
+  text-align: center;
+  padding: 2.5rem 5%;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  margin-top: 4rem;
+}

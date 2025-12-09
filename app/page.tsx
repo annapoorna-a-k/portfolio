@@ -4,6 +4,8 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";  
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Background from "@/components/Background";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
+      <Background />
     </main>
   );
 }
