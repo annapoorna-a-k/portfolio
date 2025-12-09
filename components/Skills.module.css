@@ -80,3 +80,27 @@
     transform: translateY(0);
   }
 }
+
+.skillGroup {
+  margin-top: 3rem;
+}
+
+.groupTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.skillIcon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--accent);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
