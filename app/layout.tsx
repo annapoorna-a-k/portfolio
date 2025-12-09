@@ -1,39 +1,27 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "../components/Navbar";
-import { ThemeProvider } from "../components/ThemeProvider"; // 🌙 Theme Provider
+import { Cormorant_Garamond, Montserrat } from 'next/font/google'
+import './globals.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const cormorant = Cormorant_Garamond({
+  weight: ['300', '400', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const montserrat = Montserrat({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+})
 
-export const metadata: Metadata = {
-  title: "Annapoorna A K",
-  description: "Portfolio of M.Tech AI Student - Annapoorna A K",
-};
+export const metadata = {
+  title: 'Annapoorna A K - AI Portfolio',
+  description: 'M.Tech AI student passionate about Data Analytics and Deep Learning',
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} dark:bg-black dark:text-white bg-white text-gray-900 transition-colors duration-300 antialiased`}
-      >
-        <ThemeProvider>
-          <Navbar />
-          <main className="pt-20">{children}</main>
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }

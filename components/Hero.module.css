@@ -1,0 +1,209 @@
+:root {
+  --primary: #8b1538;
+  --secondary: #c2185b;
+  --accent: #d4af37;
+  --dark: #1a0a0f;
+  --card-bg: #2a1520;
+  --light: #fef6f8;
+  --text-muted: #e8c5d3;
+  --gradient: linear-gradient(135deg, #8b1538 0%, #c2185b 50%, #6b1028 100%);
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+}
+
+/* HERO CONTAINER */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 5% 4rem;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+/* TEXT BLOCK */
+.heroText {
+  animation: fadeInLeft 1.2s ease-out;
+}
+
+.heroText .greeting {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.heroText h1 {
+  font-family: var(--font-cormorant);
+  font-size: 5.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.heroText .gradientText {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroText .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+/* BUTTONS */
+.heroText .ctaButtons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 1.1rem 3rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: var(--gradient);
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 30px rgba(139, 21, 56, 0.4);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(139, 21, 56, 0.6);
+}
+
+.btnSecondary {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btnSecondary:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-4px);
+}
+
+/* PROFILE IMAGE */
+.heroImage {
+  animation: fadeInRight 1.2s ease-out;
+}
+
+.profileContainer {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: auto;
+}
+
+.profileRing {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: var(--gradient);
+  animation: rotate 20s linear infinite;
+  opacity: 0.5;
+}
+
+.profileRing::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--dark);
+  border-radius: 50%;
+}
+
+.profileGlow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: var(--gradient);
+  filter: blur(60px);
+  opacity: 0.3;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--card-bg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* ANIMATIONS */
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroText h1 {
+    font-size: 3.6rem;
+  }
+
+  .profileContainer {
+    width: 330px;
+    height: 330px;
+  }
+
+  .heroText .ctaButtons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroText h1 {
+    font-size: 2.7rem;
+  }
+  .profileContainer {
+    width: 260px;
+    height: 260px;
+  }
+}

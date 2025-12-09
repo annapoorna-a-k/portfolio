@@ -1,0 +1,82 @@
+:root {
+  --primary: #8b1538;
+  --secondary: #c2185b;
+  --accent: #d4af37;
+  --dark: #1a0a0f;
+  --light: #fef6f8;
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  background: rgba(26, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(139, 21, 56, 0.2);
+  transition: all 0.4s ease;
+}
+
+.scrolled {
+  padding: 1rem 5%;
+  background: rgba(26, 10, 15, 0.95);
+  box-shadow: 0 8px 32px rgba(139, 21, 56, 0.2);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-cormorant);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.navLinks a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLinks a::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  transition: width 0.4s ease;
+}
+
+.navLinks a:hover {
+  color: var(--accent);
+}
+
+.navLinks a:hover::before {
+  width: 100%;
+}
