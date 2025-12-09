@@ -80,3 +80,11 @@
 .navLinks a:hover::before {
   width: 100%;
 }
+
+.active {
+  color: var(--accent) !important;
+}
+
+.active::before {
+  width: 100% !important;
+}

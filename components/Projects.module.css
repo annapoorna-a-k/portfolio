@@ -1,101 +1,77 @@
-:root {
-  --accent: #d4af37;
-  --text-muted: #e8c5d3;
-  --card-bg: #2a1520;
-  --gradient: linear-gradient(135deg, #8b1538, #c2185b);
-}
-
-/* SECTION WRAPPER */
+/* PROJECT SECTION */
 .projects {
-  padding: 8rem 5%;
-}
-
-/* HEADER */
-.sectionHeader {
+  padding: 6rem 5%;
   text-align: center;
-  margin-bottom: 5rem;
 }
 
 .sectionTag {
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 600;
+  font-size: 0.85rem;
   letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
 .sectionTitle {
+  font-size: 3rem;
   font-family: var(--font-cormorant);
-  font-size: 3.5rem;
   font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--light);
 }
 
-.decorativeLine {
-  width: 100px;
-  height: 3px;
-  background: var(--accent);
-  margin: 1.5rem auto 0;
-}
-
-/* PROJECT CARDS */
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 3rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.2rem;
+  margin-top: 3rem;
 }
 
+/* CARD DESIGN */
 .projectCard {
-  background: rgba(42, 21, 32, 0.55);
+  background: rgba(42, 21, 32, 0.5);
   backdrop-filter: blur(10px);
-  border-radius: 30px;
-  padding: 2.5rem;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 2rem;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(139, 21, 56, 0.25);
   cursor: pointer;
-  transition: all .4s ease;
   position: relative;
 }
 
 .projectCard:hover {
-  transform: translateY(-15px);
+  transform: translateY(-12px) scale(1.02);
   border-color: var(--accent);
-  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 45px rgba(139, 21, 56, 0.45);
 }
 
-.projectIcon {
-  font-size: 3.2rem;
+.projectCard h3 {
+  font-size: 1.4rem;
+  font-family: var(--font-cormorant);
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.projectTitle {
-  font-family: var(--font-cormorant);
-  font-size: 2rem;
-  margin-bottom: .7rem;
-}
-
-.projectDesc {
-  color: var(--text-muted);
-  line-height: 1.8;
+.projectCard p {
   font-size: 1rem;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
+/* Button Link */
 .projectLink {
   color: var(--accent);
-  font-weight: 600;
-  text-transform: uppercase;
   text-decoration: none;
-  transition: all .3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
 .projectLink:hover {
-  text-shadow: 0 0 15px var(--accent);
-}
-
-.projectContent h3 {
-  font-size: 1.4rem;
-}
-.projectContent p {
-  font-size: 1rem;
+  text-shadow: 0 0 10px var(--accent);
+  padding-left: 4px;
 }
