@@ -92,3 +92,10 @@
 .projectLink:hover {
   text-shadow: 0 0 15px var(--accent);
 }
+
+.projectContent h3 {
+  font-size: 1.4rem;
+}
+.projectContent p {
+  font-size: 1rem;
+}

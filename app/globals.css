@@ -231,3 +231,21 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Global Refinements */
+html {
+  font-size: 90%; /* Slightly smaller overall scale */
+}
+
+section {
+  padding: 5rem 5%; /* Less vertical space */
+}
+
+/* Headings: reduce size */
+h1 {
+  font-size: 3.5rem !important;
+}
+h2 {
+  font-size: 2.8rem !important;
+}
+

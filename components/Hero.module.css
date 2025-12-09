@@ -200,10 +200,10 @@
 
 @media (max-width: 768px) {
   .heroText h1 {
-    font-size: 2.7rem;
+    font-size: 2.2rem;
   }
   .profileContainer {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
   }
 }
