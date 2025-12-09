@@ -1,5 +1,9 @@
+"use client";
 import React from "react";
 import styles from "./Contact.module.css";
+
+// 👇 Import icons you want
+import { FiMail, FiLinkedin, FiFileText } from "react-icons/fi";
 
 export default function Contact() {
   return (
@@ -11,15 +15,12 @@ export default function Contact() {
       </div>
 
       <p className={styles.contactText}>
-        Feel free to reach out if you're interested in collaborating or just want to say hi!
+        Feel free to reach out if you're interested in collaborating or want to say hi!
       </p>
 
       <div className={styles.socialLinks}>
-        <a
-          href="mailto:akannapoorna94@gmail.com"
-          className={styles.socialButton}
-        >
-          ✉ Email
+        <a href="mailto:akannapoorna94@gmail.com" className={styles.socialButton}>
+          <FiMail /> Email
         </a>
 
         <a
@@ -28,7 +29,7 @@ export default function Contact() {
           rel="noopener noreferrer"
           className={styles.socialButton}
         >
-          🔗 LinkedIn
+          <FiLinkedin /> LinkedIn
         </a>
 
         <a
@@ -36,7 +37,7 @@ export default function Contact() {
           download="Annapoorna_AK_Resume.pdf"
           className={styles.socialButton}
         >
-          📄 Resume
+          <FiFileText /> Resume
         </a>
       </div>
     </section>

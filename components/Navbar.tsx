@@ -8,9 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,11 +16,14 @@ export default function Navbar() {
   const sections = ["home", "about", "skills", "projects", "contact"];
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.navContainer}>
+    <nav
+      className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
+      role="navigation"
+    >
+      <div className={`${styles.navContainer} ${isOpen ? styles.noScroll : ""}`}>
         <div className={styles.logo}>Annapoorna</div>
 
-        {/* Links */}
+        {/* Nav Links */}
         <ul className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
           {sections.map((sec) => (
             <li key={sec}>
@@ -36,10 +37,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger button */}
+        {/* Hamburger */}
         <button
           className={styles.hamburger}
           onClick={() => setIsOpen((prev) => !prev)}
+          aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
         >
           <span className={styles.bar}></span>

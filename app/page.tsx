@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { initScrollReveal } from "@/utils/reveal";
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -13,14 +12,27 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
 
-  // 🔥 Initialize Scroll Reveal Animation
   useEffect(() => {
-    initScrollReveal();
+    const revealElements = () => {
+      const reveals = document.querySelectorAll<HTMLElement>(".reveal");
+
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealElements);
+    revealElements(); // run immediately on load
+
+    return () => window.removeEventListener("scroll", revealElements);
   }, []);
 
   return (
     <main>
-      {/* Background Gradient Balls Layer */}
+      {/* Background Orbs */}
       <div className="bg-animation">
         <div className="orb orb1"></div>
         <div className="orb orb2"></div>
@@ -30,22 +42,22 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* 👇 Scroll-Reveal sections */}
-      <section id="about" className="reveal">
+      {/* Fade-up Scroll Sections */}
+      <div className="reveal" id="about">
         <About />
-      </section>
+      </div>
 
-      <section id="skills" className="reveal">
+      <div className="reveal" id="skills">
         <Skills />
-      </section>
+      </div>
 
-      <section id="projects" className="reveal">
+      <div className="reveal" id="projects">
         <Projects />
-      </section>
+      </div>
 
-      <section id="contact" className="reveal">
+      <div className="reveal" id="contact">
         <Contact />
-      </section>
+      </div>
 
       <Footer />
     </main>

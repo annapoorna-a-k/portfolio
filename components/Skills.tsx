@@ -14,7 +14,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className={styles.skills} id="skills">
+    <section className={`${styles.skills} reveal`} id="skills">
       <div className={styles.sectionHeader}>
         <div className={styles.sectionTag}>Expertise</div>
         <h2 className={styles.sectionTitle}>Skills & Technologies</h2>
@@ -23,10 +23,10 @@ export default function Skills() {
 
       <div className={styles.skillsGrid}>
         {skills.map((skill, index) => (
-          <div key={index} className={styles.skillCard}>
-            <div className={styles.skillIcon}>{skill.icon}</div>
+          <article key={index} className={`${styles.skillCard} reveal`}>
+            <span className={styles.skillIcon}>{skill.icon}</span>
             <h3>{skill.name}</h3>
-          </div>
+          </article>
         ))}
       </div>
     </section>

@@ -4,14 +4,7 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero} id="home">
-      {/* Floating Animated Background Orbs */}
-      <div className="bg-animation">
-        <div className="orb orb1"></div>
-        <div className="orb orb2"></div>
-        <div className="orb orb3"></div>
-      </div>
-
+    <section className={`${styles.hero} reveal`} id="home">
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <div className={styles.greeting}>Welcome</div>
@@ -35,7 +28,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Profile Image */}
         <div className={styles.heroImage}>
           <div className={styles.profileContainer}>
             <div className={styles.profileGlow}></div>
