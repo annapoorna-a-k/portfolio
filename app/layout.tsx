@@ -18,10 +18,15 @@ export const metadata = {
   description: 'M.Tech AI student passionate about Data Analytics and Deep Learning',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body>{children}</body>
     </html>
-  )
+  );
 }
+
