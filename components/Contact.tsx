@@ -1,11 +1,23 @@
 "use client";
-import React from "react";
 import styles from "./Contact.module.css";
-
-// 👇 Import icons you want
-import { FiMail, FiLinkedin, FiFileText } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 export default function Contact() {
+  const { register, handleSubmit, reset } = useForm();
+  const [status, setStatus] = useState("");
+
+  const onSubmit = async (data: any) => {
+    setStatus("Sending...");
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    setStatus(res.ok ? "Message sent successfully!" : "Failed to send message");
+    reset();
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.sectionHeader}>
@@ -14,32 +26,15 @@ export default function Contact() {
         <div className={styles.decorativeLine}></div>
       </div>
 
-      <p className={styles.contactText}>
-        Feel free to reach out if you're interested in collaborating or want to say hi!
-      </p>
-
-      <div className={styles.socialLinks}>
-        <a href="mailto:akannapoorna94@gmail.com" className={styles.socialButton}>
-          <FiMail /> Email
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/annapoorna-a-k/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-        >
-          <FiLinkedin /> LinkedIn
-        </a>
-
-        <a
-          href="/files/Resume.pdf"
-          download="Annapoorna_AK_Resume.pdf"
-          className={styles.socialButton}
-        >
-          <FiFileText /> Resume
-        </a>
-      </div>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <input type="text" placeholder="Your Name" required {...register("name")} />
+        <input type="email" placeholder="Your Email" required {...register("email")} />
+        <textarea placeholder="Your Message" rows={5} required {...register("message")} />
+        <button type="submit" className={styles.btnPrimary}>
+          Send Message
+        </button>
+        {status && <p className={styles.status}>{status}</p>}
+      </form>
     </section>
   );
 }
