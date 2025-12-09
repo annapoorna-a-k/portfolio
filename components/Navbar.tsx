@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // <-- moved inside
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +19,28 @@ export default function Navbar() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navContainer}>
         <div className={styles.logo}>Annapoorna</div>
-        <ul className={styles.navLinks}>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+        <ul className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
+          {["home", "about", "skills", "projects", "contact"].map((sec) => (
+            <li key={sec}>
+              <a
+                href={`#${sec}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {sec.toUpperCase()}
+              </a>
+            </li>
+          ))}
         </ul>
+
+        <button
+          className={styles.hamburger}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+        </button>
       </div>
     </nav>
   );
