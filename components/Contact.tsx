@@ -1,40 +1,73 @@
 "use client";
 import styles from "./Contact.module.css";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 
 export default function Contact() {
-  const { register, handleSubmit, reset } = useForm();
-  const [status, setStatus] = useState("");
-
-  const onSubmit = async (data: any) => {
-    setStatus("Sending...");
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    setStatus(res.ok ? "Message sent successfully!" : "Failed to send message");
-    reset();
-  };
-
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.sectionHeader}>
         <div className={styles.sectionTag}>Contact</div>
-        <h2 className={styles.sectionTitle}>Let’s Connect</h2>
+        <h2 className={styles.sectionTitle}>Let's Connect</h2>
         <div className={styles.decorativeLine}></div>
       </div>
 
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Your Name" required {...register("name")} />
-        <input type="email" placeholder="Your Email" required {...register("email")} />
-        <textarea placeholder="Your Message" rows={5} required {...register("message")} />
-        <button type="submit" className={styles.btnPrimary}>
-          Send Message
-        </button>
-        {status && <p className={styles.status}>{status}</p>}
-      </form>
+      <p className={styles.contactText}>
+        Connect with me on any of these platforms!
+      </p>
+
+      <div className={styles.socialLinks}>
+        
+        <a
+          href="https://www.linkedin.com/in/annapoorna-a-k/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconButton}
+          title="LinkedIn"
+        >
+          <FaLinkedin />
+        </a>
+
+        <a
+          href="https://github.com/annapoorna-a-k"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconButton}
+          title="GitHub"
+        >
+          <FaGithub />
+        </a>
+
+        <a
+          href="https://leetcode.com/u/apk2002kmr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconButton}
+          title="LeetCode"
+        >
+          <SiLeetcode />
+        </a>
+
+        <a
+          href="https://discord.com/users/annn_51"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconButton}
+          title="Discord: annn_51"
+        >
+          <FaDiscord />
+        </a>
+
+        <a
+          href="mailto:akannapoorna94@gmail.com"
+          className={styles.iconButton}
+          title="Email: akannapoorna94@gmail.com"
+        >
+          <MdEmail />
+        </a>
+
+      </div>
     </section>
   );
 }

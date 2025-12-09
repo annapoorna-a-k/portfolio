@@ -112,3 +112,44 @@
   margin-top: 0.5rem;
 }
 
+.iconButton {
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 21, 56, 0.3);
+  color: var(--light);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.iconButton:hover {
+  transform: translateY(-8px) scale(1.08);
+  border-color: var(--accent);
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+
+.emailHover {
+  position: absolute;
+  bottom: -30px;
+  white-space: nowrap;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.iconButton:hover .emailHover {
+  opacity: 1;
+  transform: translateY(0);
+}
