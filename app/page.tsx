@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero"; // only Hero exists right now
 import About from "@/components/About";
-import Skills from "@/components/Skills";
-
+import Skills from "@/components/Skills";  
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -11,12 +12,8 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
-      {/* These will be added later */}
-      {/* <About />
-      
       <Projects />
       <Contact />
-      <Footer /> */}
     </main>
   );
 }

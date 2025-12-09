@@ -1,0 +1,94 @@
+:root {
+  --accent: #d4af37;
+  --text-muted: #e8c5d3;
+  --card-bg: #2a1520;
+  --gradient: linear-gradient(135deg, #8b1538, #c2185b);
+}
+
+/* SECTION WRAPPER */
+.projects {
+  padding: 8rem 5%;
+}
+
+/* HEADER */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionTag {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-cormorant);
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.decorativeLine {
+  width: 100px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+}
+
+/* PROJECT CARDS */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.projectCard {
+  background: rgba(42, 21, 32, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 2.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: all .4s ease;
+  position: relative;
+}
+
+.projectCard:hover {
+  transform: translateY(-15px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+}
+
+.projectIcon {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-family: var(--font-cormorant);
+  font-size: 2rem;
+  margin-bottom: .7rem;
+}
+
+.projectDesc {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectLink {
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.projectLink:hover {
+  text-shadow: 0 0 15px var(--accent);
+}
