@@ -21,7 +21,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const sections = ["home", "about", "skills", "projects", "contact"];
+  const sections = ["home", "about", "skills", "experience", "projects", "contact"];
+
 
   if (!mounted) return null; // prevents hydration mismatch
 
