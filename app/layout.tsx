@@ -1,37 +1,27 @@
-import { Cormorant_Garamond, Montserrat } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import "./globals.css";
 
+/* Fonts */
 const cormorant = Cormorant_Garamond({
-  weight: ['300', '400', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-cormorant',
-})
+  weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+});
 
 const montserrat = Montserrat({
-  weight: ['300', '400', '500', '600'],
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-})
+  weight: ["300", "400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
-export const metadata = {
-  title: 'Annapoorna A K - AI Portfolio',
-  description: 'M.Tech AI student passionate about Data Analytics and Deep Learning',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
-    </html>
-  );
-}
-
-import "./globals.css";
-import { ThemeProvider } from "next-themes";
+/* Metadata (SEO basic) */
+export const metadata: Metadata = {
+  title: "Annapoorna A K | AI Portfolio",
+  description:
+    "M.Tech AI student passionate about Data Analytics, Deep Learning, and intelligent systems",
+};
 
 export default function RootLayout({
   children,
@@ -39,7 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${cormorant.variable} ${montserrat.variable}`}
+    >
       <body>
         <ThemeProvider
           attribute="class"
