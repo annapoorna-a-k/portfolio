@@ -1,0 +1,47 @@
+.experience {
+  padding: 7rem 5%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTag {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-family: var(--font-cormorant);
+  font-size: 2.4rem;
+  margin: 1rem 0;
+}
+
+.decorativeLine {
+  width: 90px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.5rem auto;
+}
+
+.experienceList {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.experienceItem h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.experienceItem p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
