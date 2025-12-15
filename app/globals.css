@@ -264,3 +264,23 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+:root {
+  --bg: #fefefe;
+  --text: #1a0a0f;
+  --accent: #8b1538;
+  --card: #ffffff;
+}
+
+.dark {
+  --bg: #1a0a0f;
+  --text: #fef6f8;
+  --accent: #d4af37;
+  --card: #2a1520;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}

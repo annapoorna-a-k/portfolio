@@ -129,3 +129,23 @@
     font-size: 0.95rem;
   }
 }
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.themeToggle:hover {
+  transform: scale(1.15);
+}
+
